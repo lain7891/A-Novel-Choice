@@ -10,7 +10,7 @@
 ## Creators
 
 **Team IRIDIUM**
- - Estaphania Lupo
+ - Estefania Lupo
  - Elyse Wells
  - Samuel Endrias
  - Geoff Nix
