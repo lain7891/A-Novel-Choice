@@ -18,7 +18,7 @@
  ## Packages Used
  * express<br/>
  * express-handlebars<br/>
- * mysql<br/>
+ * mysql2<br/>
  
  ## Description
   Looking for your next book to read for your book club, but can’t decide on one. 
