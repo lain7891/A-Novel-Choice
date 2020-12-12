@@ -4,7 +4,7 @@ module.exports = function (sequelize, DataTypes) {
     });
     Club.associate = function (models){
         Club.hasMany(models.Book, {
-            foreignKey: "bookId",
+            foreignKey: "clubId",
         });
     };
     return Club;
