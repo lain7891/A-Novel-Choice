@@ -6,3 +6,13 @@ app.listen(PORT, ()=>{
     console.log(`app is running on http://localhost:${PORT}`);
 
 });
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.use(express.static("public"));
+
+app.get("/", (req, res)=>{
+    res.render("index");
+});
+
