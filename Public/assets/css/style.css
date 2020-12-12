@@ -1,0 +1,12 @@
+nav{
+    background-color: transparent !important;
+}
+
+.nav-wrapper a{
+    color: #aaa !important;
+}  
+
+.background {
+    background-image: url("/Public/assets/images/background.jpg");
+    position: fixed;
+}
