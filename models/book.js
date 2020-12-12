@@ -3,5 +3,6 @@ module.exports = function (sequelize, DataTypes) {
         title: DataTypes.STRING,
         author: DataTypes.STRING,
     });
-};
     return Book; 
+};
+ 

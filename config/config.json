@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Lain7891!",
-    "database": "database_development",
+    "database": "books_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
