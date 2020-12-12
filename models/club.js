@@ -1,8 +1,13 @@
 module.exports = function (sequelize, DataTypes) {
-    const CLub = sequelize.define("Club", {
+    const Club = sequelize.define("Club", {
         name: DataTypes.STRING,
     });
-    return CLub;
+    Club.associate = function (models){
+        Club.hasMany(models.Book, {
+            foreignKey: "clubId",
+        });
+    };
+    return Club;
 };
 
     
