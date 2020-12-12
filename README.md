@@ -11,7 +11,7 @@
 
 **Team IRIDIUM**
  - Estefania Lupo
- - Elyse Wells
+ - [Elyse Wells](https://github.com/ewells89?tab=repositories)
  - Samuel Endrias
  - Geoff Nix
  
