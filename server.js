@@ -2,13 +2,13 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const db = require("./models");
 const app = express();
+const path = require ("path");
 const handlebars = require("handlebars");
 const {
 	allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
 
 const bookController = require("./controller/booksController");
-
 
 
 const PORT = process.env.PORT || 8080;
@@ -43,6 +43,16 @@ app.get("/api/config", (req, res) => {
 	});
 });
 
+app.get('/', (req, res)=>{
+    res.render('index',{title: 'Home Page'});
+});
+app.get('/vote', (req, res)=>{
+    res.render('vote',{title: 'Vote Page'});
+});
+app.get('/admin', (req, res)=>{
+    res.render('admin',{title: 'Admin Page'});
+});
+
 app.post("/api/test", (req, res) => {
 	console.log(req.body);
 });
@@ -52,3 +62,4 @@ db.sequelize.sync().then(() => {
 		console.log(`App is running on http://localhost:${PORT}`);
 	});
 });
+
