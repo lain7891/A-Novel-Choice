@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "7Streams!",
+=======
+    "password": "Lain7891!",
+>>>>>>> 7d3c666c454c0d8385b50e78c8904af67ff5481b
     "database": "books_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
