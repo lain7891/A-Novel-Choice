@@ -27,3 +27,4 @@
   members can vote for the book they would like to read for the month. The book 
   with the most votes will then be the winner and your book club's next book.
  
+edit
