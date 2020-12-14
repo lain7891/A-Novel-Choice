@@ -4,13 +4,13 @@ const router = express.Router();
 const db = require("../models");
 
 //INDEX ROUTE FOR GET ALL BOOKS
-router.get("/books", (req, res) => {
+router.get("/vote", (req, res) => {
 	db.Book.findAll({
 		include: db.Club,
 	})
 		.then((allBooks) => {
 			console.log(allBooks);
-			res.render("books", { books: allBooks });
+			res.render("vote", { books: allBooks });
 		})
 		.catch((err) => {
 			console.log(err);
