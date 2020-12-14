@@ -3,6 +3,11 @@ module.exports = function (sequelize, DataTypes) {
         title: DataTypes.STRING,
         author: DataTypes.STRING,
     });
+    Book.associate = function (models){
+        Book.belongsTo(models.Club, {
+            through: "book",
+            foreignKey: "clubId",
+        });
+    };
     return Book; 
 };
- 

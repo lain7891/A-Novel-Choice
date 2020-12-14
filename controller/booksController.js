@@ -3,8 +3,17 @@ const router = express.Router();
 
 const db = require("../models");
 
+// ============
+// VIEW ROUTES
+// ============
+
+// index page (on server.js)
+// votes page
+// admin page
+
 //INDEX ROUTE FOR GET ALL BOOKS
 router.get("/vote", (req, res) => {
+	// res.render("vote", res);
 	db.Book.findAll({
 		include: db.Club,
 	})
@@ -18,26 +27,58 @@ router.get("/vote", (req, res) => {
 });
 
 //ROUTE FOR NEW BOOK
-router.get("/book/new", (req, res) => {
-	res.render("new-book");
+// router.get("/book/new", (req, res) => {
+// 	res.render("new-book");
+// });
+
+
+
+
+// TODO: Correct this block to be specific to the admin page
+router.get("/admin", (req, res) => {
+	// res.render("admin", res);
+	db.Book.findAll({
+		include: db.Club,
+	})
+		.then((admin) => {
+			console.log(admin);
+			// TODO: add correct object for this view route
+			// res.render("admin", { books: admin });
+		})
+		.catch((err) => {
+			console.log(err);
+		});
 });
+
+// ============
+// API ROUTES
+// ============
+
+// GET all clubs
+// POST club
+
+// GET books by club
+// POST books by club
+// PUT books by club
+// DELETE books by club
 
 
 //ROUTE TO EDIT BOOKS
-router.get("/books/:id/edit", (req, res) => {
-	db.Book.findOne({
-		where: {
-			id: req.params.id,
-		},
-	}).then((foundBook) => {
-		console.log(foundBook.title);
-		res.render("edit-book", {
-			title: foundBook.title,
-			author: foundBook.author,
-			id: foundBook.id,
-		});
-	});
-});
+// TODO: Convert this route to an API GET route
+// router.get("/books/:id/edit", (req, res) => {
+// 	db.Book.findOne({
+// 		where: {
+// 			id: req.params.id,
+// 		},
+// 	}).then((foundBook) => {
+// 		console.log(foundBook.title);
+// 		res.render("edit-book", {
+// 			title: foundBook.title,
+// 			author: foundBook.author,
+// 			id: foundBook.id,
+// 		});
+// 	});
+// });
 
 //ROUTE TO POST BOOKS
 router.post("/api/books", (req, res) => {
@@ -80,5 +121,7 @@ router.delete("/api/books/:id", (req, res) => {
 			console.log(err);
 		});
 });
+
+// TODO: create GET and POST routes for clubs
 
 module.exports = router;
