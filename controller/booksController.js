@@ -13,17 +13,17 @@ const db = require("../models");
 
 //INDEX ROUTE FOR GET ALL BOOKS
 router.get("/vote", (req, res) => {
-	// res.render("vote", res);
-	db.Book.findAll({
-		include: db.Club,
-	})
-		.then((allBooks) => {
-			console.log(allBooks);
-			res.render("vote", { books: allBooks });
-		})
-		.catch((err) => {
-			console.log(err);
-		});
+	res.render("vote", res);
+	// db.Book.findAll({
+	// 	include: db.Club,
+	// })
+	// 	.then((allBooks) => {
+	// 		console.log(allBooks);
+	// 		res.render("vote", { books: allBooks });
+	// 	})
+	// 	.catch((err) => {
+	// 		console.log(err);
+	// 	});
 });
 
 //ROUTE FOR NEW BOOK
