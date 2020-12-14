@@ -6,12 +6,20 @@ nav{
     color: #aaa !important;
 }  
 
-#background {
-    background-image: url("/Public/assets/images/background.jpg");
-    position: fixed;
+#bg-image{
+    background-image: url("./images/background.jpg");
+    position:fixed;
 }
 
 .home {
     text-align:center;
-    
+
+}
+
+h1 {
+    text-align:center;
+}
+
+#searchIcon {
+    float:left;
 }
