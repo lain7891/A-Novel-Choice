@@ -1,11 +1,11 @@
-var mysql = require("mysql");
+var mysql2 = require("mysql2");
 
-var connection = mysql.createConnection({
+var connection = mysql2.createConnection({
 	host: "localhost",
 	port: 3306,
 	user: "root",
 	password: "potato16",
-	database: "task_saver_db"
+	database: "books_db"
   });
   
   connection.connect(function(err) {
