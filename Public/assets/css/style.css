@@ -6,10 +6,15 @@ nav{
     color: #aaa !important;
 }  
 
-#bg-image{
-    background-image: url("./images/background.jpg");
-    position:fixed;
-}
+.backgroundimage {
+    background-image: url("/assets/images/background.jpg");
+    height: 400px;
+    width: 100%;
+    /* object-fit: cover; */
+    background-position: 100% 30%;
+    background-size: cover;
+    
+  }
 
 .home {
     text-align:center;
