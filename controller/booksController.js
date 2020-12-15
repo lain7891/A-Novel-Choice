@@ -13,7 +13,6 @@ const db = require("../models");
 
 //INDEX ROUTE FOR GET ALL BOOKS
 router.get("/vote", (req, res) => {
-  // res.render("vote", res);
   db.Book.findAll({
     include: db.Club,
   })
@@ -26,12 +25,9 @@ router.get("/vote", (req, res) => {
     });
 });
 
-// CREATED AN ADMIN ROUTE FOR THE ADMIN PAGE TARGETTING CLUB???? (I THINK IT WORKED BUT UNSURE IF I AM TARGETTING THIS CORRECTLY)
+
 router.get("/admin", (req, res) => {
-  // res.render("vote", res);
-  db.Club.findAll({
-    include: db.Book,
-  })
+  db.Club.findAll()
     .then((allClubs) => {
       console.log(allClubs);
       res.render("admin", { clubs: allClubs });
@@ -55,18 +51,9 @@ router.get("/admin", (req, res) => {
 // DELETE books by club
 
 router.get("/api/clubs", (req, res) => {
-  db.Club.findAll({
-
-    // where: {
-    //   id: req.params.id,
-	// },
-	
-  }).then((foundClub) => {
+  db.Club.findAll().then((foundClub) => {
     console.log(foundClub);
-    res.render("admin", {
-      name: foundClub.name,
-      id: foundClub.id,
-    });
+    res.json(foundClub);
   });
 });
 
@@ -83,7 +70,6 @@ router.post("/api/clubs", (req, res) => {
   });
 
 //ROUTE TO EDIT BOOKS
-// TODO: Convert this route to an API GET route
 router.get("/books/:id/edit", (req, res) => {
   db.Book.findOne({
     where: {
@@ -91,7 +77,6 @@ router.get("/books/:id/edit", (req, res) => {
     },
   }).then((foundBook) => {
     console.log(foundBook);
-	// res.render("admin", foundBook);
 	res.json(foundBook);
   });
 });
@@ -139,7 +124,6 @@ router.delete("/api/books/:id", (req, res) => {
     });
 });
 
-// TODO: create GET and POST routes for clubs
 
 module.exports = router;
 
