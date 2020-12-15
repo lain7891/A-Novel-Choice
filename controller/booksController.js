@@ -23,6 +23,7 @@ router.get("/vote", (req, res) => {
     .catch((err) => {
       console.log(err);
     });
+
 });
 
 
