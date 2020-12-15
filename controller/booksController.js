@@ -13,6 +13,7 @@ const db = require("../models");
 
 //INDEX ROUTE FOR GET ALL BOOKS
 router.get("/vote", (req, res) => {
+
   db.Book.findAll({
     include: db.Club,
   })
@@ -23,6 +24,7 @@ router.get("/vote", (req, res) => {
     .catch((err) => {
       console.log(err);
     });
+
 });
 
 
