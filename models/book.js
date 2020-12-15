@@ -1,3 +1,4 @@
+// TODO: Add votes column to the books model/table.
 module.exports = function (sequelize, DataTypes) {
     const Book = sequelize.define("Book", {
         title: DataTypes.STRING,

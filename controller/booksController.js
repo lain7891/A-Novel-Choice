@@ -13,6 +13,7 @@ const db = require("../models");
 
 //INDEX ROUTE FOR GET ALL BOOKS
 router.get("/vote", (req, res) => {
+
   // res.render("vote", res);
   db.Book.findAll({
     include: db.Club,
@@ -24,6 +25,7 @@ router.get("/vote", (req, res) => {
     .catch((err) => {
       console.log(err);
     });
+
 });
 
 // CREATED AN ADMIN ROUTE FOR THE ADMIN PAGE TARGETTING CLUB???? (I THINK IT WORKED BUT UNSURE IF I AM TARGETTING THIS CORRECTLY)
