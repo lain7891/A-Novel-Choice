@@ -6,50 +6,16 @@
             <div class="col s2"></div>
             <div class="col s8">
                 <h1>Vote from selections below for this month! </h1>
-            <div class="with-gap">
-                <p>
-                   <label>
-                        <input class="with-gap" name="group3" type="radio" checked />
-                        <span>Red</span>
-                    </label>
-                    <label>
-                        <input class="with-gap" name="group3" type="radio" checked />
-                        <span>Red</span>
-                    </label>
-                    <label>
-                        <input class="with-gap" name="group3" type="radio" checked />
-                        <span>Red</span>
-                    </label>
-                    <label>
-                        <input class="with-gap" name="group3" type="radio" checked />
-                        <span>Red</span>
-                    </label>
-                    <label>
-                        <input class="with-gap" name="group3" type="radio" checked />
-                        <span>Red</span>
-                    </label>
-                    <label>
-                        <input class="with-gap" name="group3" type="radio" checked />
-                        <span>Red</span>
-                    </label>
-                    <label>
-                        <input class="with-gap" name="group3" type="radio" checked />
-                        <span>Red</span>
-                    </label>
-                    <label>
-                        <input class="with-gap" name="group3" type="radio" checked />
-                        <span>Red</span>
-                    </label>
-                    <label>
-                        <input class="with-gap" name="group3" type="radio" checked />
-                        <span>Red</span>
-                    </label>
-                    <label>
-                        <input class="with-gap" name="group3" type="radio" checked />
-                        <span>Red</span>
-                    </label>
-                </p>
-            </div>
+                <div class="with-gap">
+                    {{#each books}}
+                        <p>
+                            <label>
+                                <input class="with-gap" name="group3" type="radio" checked />
+                                <span>{{title}}</span>
+                            </label>
+                        </p>
+                    {{/each}}
+                </div>
             </div>
             <div class="col s2"></div>
         </div>
