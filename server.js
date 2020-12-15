@@ -9,7 +9,7 @@ const {
 } = require("@handlebars/allow-prototype-access");
 
 const bookController = require("./controller/booksController");
-
+const connection = require("./config/connection")
 
 const PORT = process.env.PORT || 8083;
 
@@ -31,7 +31,10 @@ app.set("view engine", "handlebars");
 
 //Views Routes *handle-bars*
 app.get("/", (req, res) => {
-	res.render("index");
+	connection.query("SELECT * FROM clubs;", function(err, data) {
+		if (err) throw err;
+	res.render("index", { clubs: data });
+	});
 });
 
 app.use(bookController);
@@ -43,15 +46,15 @@ app.get("/api/config", (req, res) => {
 	});
 });
 
-app.get('/', (req, res)=>{
-    res.render('index',{title: 'Home Page'});
-});
-app.get('/vote', (req, res)=>{
-    res.render('vote',{title: 'Vote Page'});
-});
-app.get('/admin', (req, res)=>{
-    res.render('admin',{title: 'Admin Page'});
-});
+// app.get('/', (req, res)=>{
+//     res.render('index',{title: 'Home Page'});
+// });
+// app.get('/vote', (req, res)=>{
+//     res.render('vote',{title: 'Vote Page'});
+// });
+// app.get('/admin', (req, res)=>{
+//     res.render('admin',{title: 'Admin Page'});
+// });
 
 app.post("/api/test", (req, res) => {
 	console.log(req.body);
