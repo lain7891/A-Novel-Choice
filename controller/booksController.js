@@ -11,20 +11,35 @@ const db = require("../models");
 // votes page
 // admin page
 
+router.get("/vote", (req,res) => {
+  res.render("vote")
+  //   db.Book.findAll({
+  //   include: db.Club,
+  // })
+  //   .then((allBooks) => {
+  //     console.log(allBooks);
+  //     res.render("vote", { books: allBooks });
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
+})
+
+
 //INDEX ROUTE FOR GET ALL BOOKS
-router.get("/vote", (req, res) => {
-
+//TODO: Fix this route to properly render the vote page
+router.get("/vote/:clubId", (req, res) => {
   db.Book.findAll({
-    include: db.Club,
-  })
-    .then((allBooks) => {
-      console.log(allBooks);
-      res.render("vote", { books: allBooks });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
+    where: {
+      clubId: req.params.clubId,
+    },
+  }).then((foundBooks) => {
+    console.log(foundBooks);
+    res.render("vote", foundBooks);
+    res.json(foundBooks);
+  }).catch((err) => {
+    console.log(err);
+  });
 });
 
 

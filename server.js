@@ -31,9 +31,13 @@ app.set("view engine", "handlebars");
 
 //Views Routes *handle-bars*
 app.get("/", (req, res) => {
-	connection.query("SELECT * FROM clubs;", function(err, data) {
-		if (err) throw err;
-	res.render("index", { clubs: data });
+	db.Club.findAll()
+	.then((data) => {
+		console.log(data);
+		res.render("index", { clubs: data });
+	})
+	.catch((err) => {
+		console.log(err);
 	});
 });
 
