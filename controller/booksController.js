@@ -12,17 +12,17 @@ const db = require("../models");
 // admin page
 
 router.get("/vote", (req,res) => {
-  res.render("vote")
-  //   db.Book.findAll({
-  //   include: db.Club,
-  // })
-  //   .then((allBooks) => {
-  //     console.log(allBooks);
-  //     res.render("vote", { books: allBooks });
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
+//   res.render("vote")
+    db.Club.findAll({
+    // include: db.Club,
+  })
+    .then((allClubs) => {
+      console.log(allClubs);
+      res.render("vote", { clubs: allClubs });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 })
 
 
