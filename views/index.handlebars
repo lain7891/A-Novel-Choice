@@ -19,13 +19,13 @@
         <div class="row">
             <div class="col s3"></div>
             <div class="col s6">
-                <select class="browser-default left" id="selectedClub">
+                <select class="browser-default left" id="clubSelect">
                     <option value="" disabled selected>Find Your Group Here</option>
                     {{#each clubs}}
                         <option value="{{id}}">{{name}}</option>
                     {{/each}}
                 </select>
-                <a href="/vote" class="btn-flat waves-effect waves-grey right"><i class="material-icons">search</i></a>
+                <a href="#" class="btn-flat waves-effect waves-grey right" id="selectedClub"><i class="material-icons">search</i></a>
 
             </div>
             <div class="col s3"></div>
