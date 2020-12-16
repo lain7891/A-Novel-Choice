@@ -1,11 +1,12 @@
-// document.addEventListener('DOMContentLoaded', function() {
-//     var elems = document.querySelectorAll('select');
-//     var instances = M.FormSelect.init(elems, options);
-//   });
+$(document).ready(function () {
+  console.log("Hello.");
+})
 
+$("#selectedClub").on("click", function (f) {
+  f.preventDefault();
+  console.log("Submitted");
+  let club = $("#clubSelect").val();
+  console.log(club);
 
-  
-  // $(document).ready(function(){
-  //   $('select').formSelect();
-  // });
-        
+  //TODO: add AJAX call and redirect to /vote path.
+});
