@@ -1,4 +1,149 @@
+
 {{> navbar}}
 
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col s2"></div>
+            <div class="col s8">
+                <h4>Select Your Club</h4>
+            </div>
+            <div class="col s2"></div>
+        </div>
+        <div class="row">
+            <div class="col s2"></div>
+            <div class="col s8">
+                <select class="browser-default left" id="clubSelect">
+                    <option value="" disabled selected>Select Club</option>
+                    {{#each clubs}}
+                        <option value="{{id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="col s1">
+                <a href="#" class="btn-flat left" id="selectedClub"><i class="material-icons blue-text">search</i></a>
+            </div>
+            <div class="col s1"></div>
+        </div>
 
-<h1> THIS IS THE ADMIN</h1>
+        <div class="row">
+            <div class="col s10" id="newClub">
+                <a class="modal-trigger" href="#modalNewGroup" id="newGroup"><u>Create New Group</u></a>
+            </div>
+            <div class="col s2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col s2"></div>
+            <div class="col s8">
+                <div class="row">
+                    <div class="col s2"></div>
+                    <div class="col s8">
+
+                        <!-- Loop block to show books by title and author. -->
+                        <!-- TODO: Get this to work. -->
+                        {{#each books}}
+                            <div class="row">
+                                <div class="col s10">
+                                    <h5 value={{id}}>{{title}}</h5>
+                                    <p>By:{{author}}</p>
+                                </div>
+                                <div class="col s1" id="editNovel">
+                                    <i class="material-icons right blue-text">create</i>
+                                </div>
+                                <div class="col s1" id="deleteNovel">
+                                    <i class="material-icons right blue-text modal-trigger" href="#modalEditNovel" id="editNovel">delete</i>
+                                </div>
+                            </div>
+                            <hr>
+                        {{/each}}
+
+                    </div>
+                    <div class="col s2"></div>
+                </div>
+            </div>
+            <div class="col s2"></div>
+        </div>
+
+        <!-- TODO: Convert this button to display when the response for the club query loads. -->
+        <div class="row">
+            <div class="col s2"></div>
+            <div class="col s8" id="hidden">
+                <a class="waves-effect waves-light btn blue hide modal-trigger" href="#modalNewNovel" id="newNovel">Add a New Novel</a>
+            </div>
+            <div class="col s2"></div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- MODALS BELOW THIS POINT -->
+<!-- ================================================= -->
+<div class="modal" id="modalNewGroup">
+    <div class="modal-content">
+        <h4>Add A Group</h4>
+        <hr>
+        <div class="container">
+            <h5>Enter Group Name:</h5>
+            <div class="input-field col s12">
+                <textarea id="groupName" class="materialize-textarea"></textarea>
+                <label for="groupName">Group Name</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close btn-flat">Cancel</a>
+            <a href="#!" class="modal-close waves-effect btn blue">Save</a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal" id="modalNewNovel">
+    <div class="modal-content">
+        <h4>Add A Novel</h4>
+        <hr>
+        <div class="container">
+            <h5>Enter the novel details:</h5>
+            <div class="input-field col s12">
+                <textarea id="bookTitle" class="materialize-textarea"></textarea>
+                <label for="bookTitle">Title</label>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="bookAuthor" class="materialize-textarea"></textarea>
+                <label for="bookAuthor">Author</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close btn-flat">Cancel</a>
+            <a href="#!" class="modal-close waves-effect btn blue">Save</a>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modalEditNovel">
+    <div class="modal-content">
+        <h4>Modify A Novel</h4>
+        <hr>
+        <div class="container">
+            <h5>Modify the novel details:</h5>
+            <div class="input-field col s12">
+                <textarea id="bookTitle" class="materialize-textarea"></textarea>
+                <label for="bookTitle">Title</label>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="bookAuthor" class="materialize-textarea"></textarea>
+                <label for="bookAuthor">Author</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close btn-flat">Cancel</a>
+            <a href="#!" class="modal-close waves-effect btn blue">Save</a>
+        </div>
+    </div>
+</div>
+
+<script src="/assets/js/admin.js"></script>

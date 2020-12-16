@@ -55,6 +55,7 @@ router.get("/admin", (req, res) => {
 });
 
 
+
 // ============
 // API ROUTES
 // ============
@@ -141,6 +142,19 @@ router.delete("/api/books/:id", (req, res) => {
     });
 });
 
+
+router.get("/admin/:clubId", (req, res) => {
+  db.Book.findAll({
+    where: {
+      clubId: req.params.clubId,
+    },
+  }).then((foundBooks) => {
+    console.log(foundBooks);
+    res.json(foundBooks);
+  }).catch((err) => {
+    console.log(err);
+  });
+});
 
 module.exports = router;
 
