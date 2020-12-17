@@ -36,9 +36,6 @@ $(document).ready(function () {
     });
 
 
-    //TODO: Build out delete, edit, and add calls for books.
-    
-    
     // Modal & Function for Adding a New Club
     $('#modalNewClub').modal();
     $("#saveNewClub").on("click", function (f) {
@@ -90,7 +87,7 @@ $(document).ready(function () {
     })
 
 
-
+    //TODO: Build out edit call for books.
     $('#modalEditNovel').modal(
         // onCloseStart({
         // })
