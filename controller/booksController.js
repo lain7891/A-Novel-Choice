@@ -42,6 +42,19 @@ router.get("/vote/:clubId", (req, res) => {
   });
 });
 
+router.get("/vote/:clubId/submitted", (req, res) => {
+  db.Book.findAll({
+    where: {
+      clubId: req.params.clubId,
+    },
+  }).then((foundBooks) => {
+    console.log(foundBooks);
+    res.render("voteSubmitted", {books: foundBooks});
+    // res.json(foundBooks);
+  }).catch((err) => {
+    console.log(err);
+  });
+});
 
 router.get("/admin", (req, res) => {
   db.Club.findAll()
