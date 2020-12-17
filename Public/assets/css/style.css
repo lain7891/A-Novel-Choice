@@ -15,6 +15,10 @@ nav{
     background-size: cover;
     
   }
+.background {
+    background-image: url("/Public/assets/images/books.jpg");
+    background-attachment: fixed;
+}
 
 .home {
     text-align:center;
