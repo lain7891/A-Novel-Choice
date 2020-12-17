@@ -6,30 +6,41 @@ $(document).ready(function () {
       const club = $("#clubSelect").val();
       const addNewButton = $("#newNovel")
       console.log(club);
+         
+        window.location.href=`/admin/${club}`;
+        addNewButton.removeClass("hide");
     
       //TODO: add AJAX call and redirect to /vote path.
-      $.ajax({
-        method:"GET",
-        url:`/admin/${club}`,
-      }).then((response) => {
-        console.log(response);
-        
-      },addNewButton.removeClass("hide")
-      );
+    //   $.ajax({
+    //     method:"GET",
+    //     url:`/admin/${club}`,
+    //   }).then((response) => {
+    //     console.log(response);
+    //     window.location.href=`/admin/${club}`;
+    //   },addNewButton.removeClass("hide")
+    //   );
     });
 
 
-    // $("#newNovel").on("click", function (event) {
-    //     event.preventDefault();
-    //     console.log("New Novel clicked.");
-
-    // })
-
-    $('.modal').modal();
-
-          
-      
     //TODO: Build out delete, edit, and add calls for books.
+    //TODO: Include these in the modal functions.
+    $('#modalNewGroup').modal({
+        // onCloseStart: () => {
+        //     console.log("Closing out now!")
+        // }
+    });
 
+    $('#modalNewNovel').modal(
+        // onCloseStart({
+        // })
+    );
+    // Can we append the newly created novel to the page?
+
+
+
+    $('#modalEditNovel').modal(
+        // onCloseStart({
+        // })
+    );
 
 });

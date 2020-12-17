@@ -12,6 +12,7 @@ $(document).ready(function () {
       url:`/vote/${club}`,
     }).then((response) => {
       console.log(response);
+      window.location.href=`/vote/${club}`;
       // window.location.replace("/vote");
     });
   });

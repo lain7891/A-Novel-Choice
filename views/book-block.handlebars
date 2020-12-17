@@ -2,14 +2,14 @@
 {{#each books}}
     <div class="row">
         <div class="col s10">
-            <h5>{{title}}</h5>
+            <h5 value={{id}}>{{title}}</h5>
             <p>By:{{author}}</p>
         </div>
         <div class="col s1" id="editNovel">
             <i class="material-icons right blue-text">create</i>
         </div>
         <div class="col s1" id="deleteNovel">
-            <i class="material-icons right blue-text">delete</i>
+            <i class="material-icons right blue-text modal-trigger" href="#modalEditNovel" id="editNovel">delete</i>
         </div>
     </div>
     <hr>
