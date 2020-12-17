@@ -28,8 +28,8 @@
         </div>
 
         <div class="row">
-            <div class="col s10" id="newClub">
-                <a class="modal-trigger" href="#modalNewGroup" id="newGroup"><u>Create New Group</u></a>
+            <div class="col s10" id="newClubLink">
+                <a class="modal-trigger" href="#modalNewClub" id="newClub"><u>Create New Club</u></a>
             </div>
             <div class="col s2"></div>
         </div>
@@ -42,21 +42,21 @@
 <!-- MODALS BELOW THIS POINT -->
 <!-- ================================================= -->
 
-<!-- New Group -->
-<div class="modal" id="modalNewGroup">
+<!-- New Club -->
+<div class="modal" id="modalNewClub">
     <div class="modal-content">
-        <h4>Add A Group</h4>
+        <h4>Add A Club</h4>
         <hr>
         <div class="container">
-            <h5>Enter Group Name:</h5>
+            <h5>Enter Club Name:</h5>
             <div class="input-field col s12">
-                <textarea id="groupName" class="materialize-textarea"></textarea>
-                <label for="groupName">Group Name</label>
+                <textarea id="clubName" class="materialize-textarea"></textarea>
+                <label for="clubName">Club Name</label>
             </div>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close btn-flat">Cancel</a>
-            <a href="#!" class="modal-close waves-effect btn blue">Save</a>
+            <a href="#!" class="modal-close waves-effect btn blue" id="saveNewClub">Save</a>
         </div>
     </div>
 </div>
@@ -69,17 +69,17 @@
         <div class="container">
             <h5>Enter the novel details:</h5>
             <div class="input-field col s12">
-                <textarea id="bookTitle" class="materialize-textarea"></textarea>
-                <label for="bookTitle">Title</label>
+                <textarea id="newBookTitle" class="materialize-textarea"></textarea>
+                <label for="newBookTitle">Title</label>
             </div>
             <div class="input-field col s12">
-                <textarea id="bookAuthor" class="materialize-textarea"></textarea>
-                <label for="bookAuthor">Author</label>
+                <textarea id="newBookAuthor" class="materialize-textarea"></textarea>
+                <label for="newBookAuthor">Author</label>
             </div>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close btn-flat">Cancel</a>
-            <a href="#!" class="modal-close waves-effect btn blue">Save</a>
+            <a href="#!" class="modal-close waves-effect btn blue" id="saveNewNovel">Save</a>
         </div>
     </div>
 </div>
