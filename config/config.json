@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "valentino92!!",
+    "password": "valentino92!",
     "database": "books_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "7Streams!",
+    "password": "null",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
