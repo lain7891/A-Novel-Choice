@@ -32,3 +32,19 @@ h1 {
 #searchIcon {
     float:left;
 }
+
+h4 {
+    text-align:center;
+}
+#newClub {
+    text-align:right !important;
+}
+
+#addNovel, #hidden {
+    align-content:center;
+    text-align:center;
+}
+
+h5 {
+    margin-top:0px;
+}

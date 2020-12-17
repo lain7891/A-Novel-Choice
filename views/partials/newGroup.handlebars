@@ -1,1 +1,19 @@
-{{!-- This will be the popup for to add a new group on the admin page. --}}
+<!-- This code is replicated in the admin.handlebars file.  -->
+<!-- Leaving here in case we need to render the html in the modal separately from the rest of the page. -->
+<div class="modal" id="modalNewGroup">
+    <div class="modal-content">
+        <h4>Add A Group</h4>
+        <hr>
+        <div class="container">
+            <h5>Enter Group Name:</h5>
+            <div class="input-field col s12">
+                <textarea id="groupName" class="materialize-textarea"></textarea>
+                <label for="groupName">Group Name</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close btn-flat">Cancel</a>
+            <a href="#!" class="modal-close waves-effect btn blue">Save</a>
+        </div>
+    </div>
+</div>
