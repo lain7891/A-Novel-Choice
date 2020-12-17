@@ -16,9 +16,8 @@ nav{
     
   }
 .background {
-    background-image: url("/assets/images/books.jpg");
+    background-image: url("/Public/assets/images/books.jpg");
     background-attachment: fixed;
-    height: 400px;
 }
 
 .home {
