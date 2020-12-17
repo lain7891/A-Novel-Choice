@@ -7,7 +7,7 @@ const handlebars = require("handlebars");
 const {
 	allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
-const cloudinary = require("cloudinary").v2;
+
 
 const bookController = require("./controller/booksController");
 const connection = require("./config/connection");
