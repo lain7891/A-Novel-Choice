@@ -10,43 +10,8 @@ $(document).ready(function () {
 		window.location.href = `/admin/${club}`;
 		addNewButton.removeClass("hide");
 
-    //TODO: Build out delete, edit, and add calls for books.
-
-    $("#modifyBook").on("submit", function (e) {
-      e.preventDefault();
-      console.log("Submitted");
-      const id = $(this).data("id");
-      const title = $("#title").attr("value");
-      const author = $("#author").attr("value");
-
-      console.log(book);
-         
-        // window.location.href=`/admin/${book}`;
-        // addNewButton.removeClass("hide");
-    
-      //TODO: add AJAX call and redirect to /vote path.
-      $.ajax({
-        method:"PUT",
-        url: `/api/books/${id}`,
-        data: {
-          title,
-          author,
-        }
-      }).then((response) => {
-        console.log(response);
-        // window.location.replace("/updatedBook");
-        window.location.href=`/admin/${book}/updatedBook`;
-      }
-      );
-    });
-
-
-    //TODO: Include these in the modal functions.
-    $('#modalNewGroup').modal({
-        // onCloseStart: () => {
-        //     console.log("Closing out now!")
-        // }
-    });
+		
+	});
 
 	//TODO: Build out delete, edit, and add calls for books.
 
@@ -82,5 +47,4 @@ $(document).ready(function () {
 		// onCloseStart({
 		// })
 		();
-});
 });
