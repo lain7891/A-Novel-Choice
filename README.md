@@ -25,6 +25,7 @@
  * mysql2<br/>
  * sequelize<br/>
  * sequelize-cli<br/>
+ * cloudinary<br/>
  
  ## Description
   Looking for your next book to read for your book club, but can’t decide on one. 
