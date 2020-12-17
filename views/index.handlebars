@@ -1,4 +1,5 @@
 {{!-- This code is incomplete.--}}
+ {{> navbar}}
  <section class="backgroundimage" alt="stock background image of books"></section>
 
 <div class="container">
@@ -18,14 +19,16 @@
     <section class="body">
         <div class="row">
             <div class="col s3"></div>
-            <div class="col s6">
+            <div class="col s5">
                 <select class="browser-default left" id="clubSelect">
                     <option value="" disabled selected>Find Your Group Here</option>
                     {{#each clubs}}
                         <option value="{{id}}">{{name}}</option>
                     {{/each}}
                 </select>
-                <a href="#" class="btn-flat waves-effect waves-grey right" id="selectedClub"><i class="material-icons">search</i></a>
+            </div>
+            <div class="col s1">
+                <a href="/vote/" class="btn-flat waves-effect waves-grey right" id="selectedClub"><i class="material-icons">search</i></a>
 
             </div>
             <div class="col s3"></div>
