@@ -2,12 +2,11 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const db = require("./models");
 const app = express();
-const path = require("path");
+const path = require ("path");
 const handlebars = require("handlebars");
 const {
 	allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
-const cloudinary = require("cloudinary").v2;
 
 const bookController = require("./controller/booksController");
 const connection = require("./config/connection")
@@ -33,13 +32,13 @@ app.set("view engine", "handlebars");
 //Views Routes *handle-bars*
 app.get("/", (req, res) => {
 	db.Club.findAll()
-		.then((data) => {
-			console.log(data);
-			res.render("index", { clubs: data });
-		})
-		.catch((err) => {
-			console.log(err);
-		});
+	.then((data) => {
+		console.log(data);
+		res.render("index", { clubs: data });
+	})
+	.catch((err) => {
+		console.log(err);
+	});
 });
 
 app.use(bookController);
@@ -70,3 +69,4 @@ db.sequelize.sync().then(() => {
 		console.log(`App is running on http://localhost:${PORT}`);
 	});
 });
+
