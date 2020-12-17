@@ -1,46 +1,109 @@
 $(document).ready(function () {
     console.log("Hello.");  
+
+    // =============
+    // OPTION ONE
+    // =============
+    // const clubSelect = sessionStorage.getItem("clubSelect");  
+    // $('#selectedClub').val(clubSelect);
+
+    // $('#selectedClub').change(function() { 
+    //     const dropVal = $(this).val();
+    //     sessionStorage.setItem("clubSelect", dropVal);
+    // });
+
+
+    // =============
+    // OPTION TWO
+    // =============
+    // $("#selectedClub").change(function(event){
+    //   const clubSelect = $(this).children("option:selected").val();
+    //   sessionStorage.setItem("itemName",clubSelect);
+    // });
+
+    // $("select").find("option[value="+sessionStorage.getItem("itemName")+"]").attr("selected","selected");
+
+    // Search Button Function
     $("#selectedClub").on("click", function (f) {
       f.preventDefault();
       console.log("Submitted");
       const club = $("#clubSelect").val();
       const addNewButton = $("#newNovel")
       console.log(club);
-         
+        
         window.location.href=`/admin/${club}`;
         addNewButton.removeClass("hide");
-    
-      //TODO: add AJAX call and redirect to /vote path.
-    //   $.ajax({
-    //     method:"GET",
-    //     url:`/admin/${club}`,
-    //   }).then((response) => {
-    //     console.log(response);
-    //     window.location.href=`/admin/${club}`;
-    //   },addNewButton.removeClass("hide")
-    //   );
     });
 
 
-    //TODO: Build out delete, edit, and add calls for books.
-    //TODO: Include these in the modal functions.
-    $('#modalNewGroup').modal({
-        // onCloseStart: () => {
-        //     console.log("Closing out now!")
-        // }
-    });
+    // Modal & Function for Adding a New Club
+    $('#modalNewClub').modal();
+    $("#saveNewClub").on("click", function (f) {
+      f.preventDefault();
+      const clubName = $("#clubName").val();
+      console.log(`${clubName} added.`);
+      
+      $.ajax({
+        method:"POST",
+        url:"/api/clubs",
+        data: {
+          "name" : clubName,
+        },
+        success: function() { 
+          console.log("New club added.")
+        }
+      }).then((response) => {
+        console.log(response);
+        window.location.reload();
+      });
+    })
 
-    $('#modalNewNovel').modal(
-        // onCloseStart({
-        // })
-    );
-    // Can we append the newly created novel to the page?
+
+    // Modal & Function for Adding a New Novel
+    $('#modalNewNovel').modal();
+    $("#saveNewNovel").on("click", function (f) {
+      f.preventDefault();
+      const newBookTitle = $("#newBookTitle").val();
+      const newBookAuthor = $("#newBookAuthor").val();
+      const selectedClub = $("#clubSelect").val();
+      console.log(`${newBookTitle} by ${newBookAuthor}`);
+      
+      $.ajax({
+        method:"POST",
+        url:"/api/books",
+        data: {
+          "title" : newBookTitle,
+          "author": newBookAuthor,
+          "votes" : 0,
+          "clubId": selectedClub
+        },
+        success: function() { 
+          console.log("New book added.")
+        }
+      }).then((response) => {
+        console.log(response);
+        window.location.reload();
+      });
+    })
 
 
-
+    //TODO: Build out edit call for books.
     $('#modalEditNovel').modal(
         // onCloseStart({
         // })
     );
+
+  	$("#deleteNovel").on("click", function (f) {
+    f.preventDefault();
+    const book = $("#selectedBook").attr("value");
+    console.log(book);
+		$.ajax({
+			method: "DELETE",
+			url: `/api/books/${book}`,
+		}).then((response) => {
+			console.log(response);
+			window.location.reload();
+		});
+	});
 
 });
