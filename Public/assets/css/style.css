@@ -1,10 +1,10 @@
-nav{
-    background-color: transparent !important;
+nav {
+	background-color: transparent !important;
 }
 
-.nav-wrapper a{
-    color: #aaa !important;
-}  
+.nav-wrapper a {
+	color: #aaa !important;
+}
 
 .backgroundimage {
     background-image: url("/assets/images/background.jpg");
@@ -20,13 +20,17 @@ nav{
     background-attachment: fixed;
 }
 
-.home {
-    text-align:center;
+#book-club {
+	height: 200px;
+	width: 200px;
+}
 
+.home {
+	text-align: center;
 }
 
 h1 {
-    text-align:center;
+	text-align: center;
 }
 
 #searchIcon {

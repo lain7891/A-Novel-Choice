@@ -23,7 +23,7 @@
                 <select class="browser-default left" id="clubSelect">
                     <option value="" disabled selected>Find Your Group Here</option>
                     {{#each clubs}}
-                        <option value="{{id}}">{{name}}</option>
+                        <option id="selected-club" value="{{id}}">{{name}}</option>
                     {{/each}}
                 </select>
             </div>
