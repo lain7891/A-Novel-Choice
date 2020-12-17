@@ -7,12 +7,17 @@ nav {
 }
 
 .backgroundimage {
-	background-image: url("/assets/images/background.jpg");
-	height: 400px;
-	width: 100%;
-	/* object-fit: cover; */
-	background-position: 100% 30%;
-	background-size: cover;
+    background-image: url("/assets/images/background.jpg");
+    height: 400px;
+    width: 100%;
+    /* object-fit: cover; */
+    background-position: 100% 30%;
+    background-size: cover;
+    
+  }
+.background {
+    background-image: url("/Public/assets/images/books.jpg");
+    background-attachment: fixed;
 }
 
 #book-club {
@@ -29,5 +34,21 @@ h1 {
 }
 
 #searchIcon {
-	float: left;
+    float:left;
+}
+
+h4 {
+    text-align:center;
+}
+#newClub {
+    text-align:right !important;
+}
+
+#addNovel, #hidden {
+    align-content:center;
+    text-align:center;
+}
+
+h5 {
+    margin-top:0px;
 }

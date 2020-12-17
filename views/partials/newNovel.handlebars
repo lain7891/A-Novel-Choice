@@ -1,1 +1,23 @@
-{{!-- This will be the popup for to add a new novel on the admin page. --}}
+<!-- This code is replicated in the admin.handlebars file.  -->
+<!-- Leaving here in case we need to render the html in the modal separately from the rest of the page. -->
+<div class="modal" id="modalNewNovel">
+    <div class="modal-content">
+        <h4>Add A Novel</h4>
+        <hr>
+        <div class="container">
+            <h5>Enter the novel details:</h5>
+            <div class="input-field col s12">
+                <textarea id="bookTitle" class="materialize-textarea"></textarea>
+                <label for="bookTitle">Title</label>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="bookAuthor" class="materialize-textarea"></textarea>
+                <label for="bookAuthor">Author</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close btn-flat">Cancel</a>
+            <a href="#!" class="modal-close waves-effect btn blue">Save</a>
+        </div>
+    </div>
+</div>

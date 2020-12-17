@@ -35,8 +35,8 @@ router.get("/vote/:clubId", (req, res) => {
     },
   }).then((foundBooks) => {
     console.log(foundBooks);
-    res.render("vote", foundBooks);
-    res.json(foundBooks);
+    res.render("vote", {books: foundBooks});
+    // res.json(foundBooks);
   }).catch((err) => {
     console.log(err);
   });
@@ -48,6 +48,27 @@ router.get("/admin", (req, res) => {
     .then((allClubs) => {
       console.log(allClubs);
       res.render("admin", { clubs: allClubs });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+router.get("/admin/:clubId", (req, res) => {
+  db.Club.findAll()
+    .then((allClubs) => {
+      console.log(allClubs);
+      db.Book.findAll({
+        where: {
+          clubId: req.params.clubId,
+        },
+      }).then((foundBooks) => {
+        console.log(foundBooks);
+        res.render("adminSearch", { clubs: allClubs, books: foundBooks });
+        // res.json(foundBooks);
+      }).catch((err) => {
+        console.log(err);
+      });
     })
     .catch((err) => {
       console.log(err);
@@ -140,6 +161,7 @@ router.delete("/api/books/:id", (req, res) => {
       console.log(err);
     });
 });
+
 
 
 module.exports = router;
