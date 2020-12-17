@@ -17,7 +17,7 @@
                 <select class="browser-default left" id="clubSelect">
                     <option value="" disabled selected>Select Club</option>
                     {{#each clubs}}
-                        <option value="{{id}}">{{name}}</option>
+                    <option value="{{id}}">{{name}}</option>
                     {{/each}}
                 </select>
             </div>
@@ -46,19 +46,20 @@
                         <!-- Loop block to show books by title and author. -->
                         <!-- TODO: Get the rendering to work. -->
                         {{#each books}}
-                            <div class="row">
-                                <div class="col s10">
-                                    <h5 value={{id}}>{{title}}</h5>
-                                    <p>By: {{author}}</p>
-                                </div>
-                                <div class="col s1" id="editNovel">
-                                    <a class="material-icons right blue-text modal-trigger" href="#modalEditNovel" id="editNovel">create</a>
-                                </div>
-                                <div class="col s1" id="deleteNovel">
-                                    <i class="material-icons right blue-text">delete</i>
-                                </div>
+                        <div class="row">
+                            <div class="col s10">
+                                <h5 id="selectedBook" value={{id}}>{{title}}</h5>
+                                <p>By: {{author}}</p>
                             </div>
-                            <hr>
+                            <div class="col s1">
+                                <a class="material-icons right blue-text modal-trigger" href="#modalEditNovel"
+                                    id="editNovel">create</a>
+                            </div>
+                            <div class="col s1" id="deleteNovel">
+                                <a class="material-icons right blue-text" href="#">delete</a>
+                            </div>
+                        </div>
+                        <hr>
                         {{/each}}
 
                     </div>
@@ -66,7 +67,7 @@
                 </div>
             </div>
             <div class="col s2">
-                 
+
             </div>
         </div>
 
@@ -74,7 +75,8 @@
         <div class="row">
             <div class="col s2"></div>
             <div class="col s8" id="hidden">
-                <a class="waves-effect waves-light btn blue modal-trigger" href="#modalNewNovel" id="newNovel">Add a New Novel</a>
+                <a class="waves-effect waves-light btn blue modal-trigger" href="#modalNewNovel" id="newNovel">Add a New
+                    Novel</a>
             </div>
             <div class="col s2"></div>
         </div>
