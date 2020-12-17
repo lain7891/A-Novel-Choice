@@ -10,7 +10,7 @@ const {
 
 
 const bookController = require("./controller/booksController");
-const connection = require("./config/connection");
+const connection = require("./config/connection")
 
 const PORT = process.env.PORT || 8083;
 
