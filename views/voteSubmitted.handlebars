@@ -10,16 +10,11 @@
                     {{#each books}}
                         <p>
                             <label>
-                                <input class="with-gap" name="group3" type="radio" checked />
                                 <span id="votedBook" value= {{id}}>{{title}}</span>
                             </label>
                         </p>
                     {{/each}}
                 </div>
-
-                        <button class="btn waves-effect waves-light" href="/voteSubmitted"type="submit" name="action" id="voteButton">Submit
-                             <i class="material-icons right">send</i>
-                        </button>
             </div>
             <div class="col s2"></div>
         </div>
