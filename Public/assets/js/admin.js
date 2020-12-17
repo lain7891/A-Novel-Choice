@@ -88,10 +88,44 @@ $(document).ready(function () {
 
 
     //TODO: Build out edit call for books.
-    $('#modalEditNovel').modal(
-        // onCloseStart({
-        // })
-    );
+    // $('#modalEditNovel').modal();
+    $("#editNovel").on("click",function (e) {
+      const editButton = $("#editNovel");
+      const saveButton = $("#saveNovel");
+
+      $("#selectedBook").prop("disabled", false);
+      $("#selectedAuthor").prop("disabled", false)
+      editButton.addClass("hide");
+      saveButton.removeClass("hide");
+    });
+
+    $("#saveNovel").on("click", function (e) {
+      e.preventDefault();
+      const bookId = $("#selectedBook").attr("value");
+      console.log(bookId);
+      console.log("Saved");
+      const title = $("#selectedBook").val();
+      const author = $("#selectedAuthor").val();
+      
+
+    //   //TODO: add AJAX call and redirect to /vote path.
+      $.ajax({
+        method:"PUT",
+        url: `/api/books/${bookId}`,
+        data: {
+          "title" : title,
+          "author": author
+        }
+      }).then((response) => {
+        console.log(response);
+        console.log(`${title} by ${author}`)
+        window.location.reload();
+    //     // window.location.href=`/admin/${book}/updatedBook`;
+      });
+    });
+
+
+
 
   	$("#deleteNovel").on("click", function (f) {
     f.preventDefault();

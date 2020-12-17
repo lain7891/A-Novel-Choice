@@ -48,11 +48,14 @@
                         {{#each books}}
                             <div class="row">
                                 <div class="col s10">
-                                    <h5 id="selectedBook" value={{id}}>{{title}}</h5>
-                                    <p>By: {{author}}</p>
+                                    {{!-- <h5 id="selectedBook" value={{id}}>{{title}}</h5>
+                                    <p>By: {{author}}</p> --}}
+                                    <textarea disabled id="selectedBook" class="materialize-textarea" value={{id}}>{{title}}</textarea>
+                                    <textarea disabled id="selectedAuthor" class="materialize-textarea" value={{id}}>{{author}}</textarea>
                                 </div>
-                                <div class="col s1" id="editNovel">
-                                    <a class="material-icons right blue-text modal-trigger" href="#modalEditNovel" id="editNovel">create</a>
+                                <div class="col s1">
+                                    <a class="material-icons right blue-text" href="#!" id="editNovel">create</a>
+                                    <a class="material-icons right blue-text hide" href="#" id="saveNovel">save</a>
                                 </div>
                                 <div class="col s1" >
                                     <a class="material-icons right blue-text" href="#!" id="deleteNovel">delete</a>
@@ -149,7 +152,7 @@
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close btn-flat">Cancel</a>
-            <a href="#!" class="modal-close waves-effect btn blue">Save</a>
+            <a href="#!" class="modal-close waves-effect btn blue" id="editNovel">Save</a>
         </div>
     </div>
 </div>
