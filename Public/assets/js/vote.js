@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     console.log("Hello.");  
     $("#voteButton").on("click", function (f) {
@@ -19,4 +20,3 @@ $(document).ready(function () {
       });
     });
 });
-
