@@ -11,7 +11,7 @@ $(document).ready(function () {
 // todo put increment issue
       $.ajax({
         method:"PUT",
-        url:`/api/books/${book}`
+        url:`/api/votes/${book}`
       }).then((response) => {
         console.log(response);
         window.location.href=`/vote/${club}/submitted`;
