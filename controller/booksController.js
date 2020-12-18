@@ -146,6 +146,21 @@ router.post("/api/books", (req, res) => {
 
 //ROUTE TO UPDATE BOOKS
 router.put("/api/books/:id", (req, res) => {
+  db.Book.update(req.body, {
+    where: {
+      id: req.params.id,
+    },    
+  })
+    .then((updatedBook) => {
+		console.log(updatedBook);
+	  res.json(updatedBook);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+router.put("/api/votes/:id", (req, res) => {
   db.Book.increment({
     votes: +1
   },
@@ -154,11 +169,6 @@ router.put("/api/books/:id", (req, res) => {
       id: req.params.id,
     },    
   })
-  // db.Book.update(req.body, {
-  //   where: {
-  //     id: req.params.id,
-  //   },    
-  // })
     .then((updatedBook) => {
 		console.log(updatedBook);
 	  res.json(updatedBook);
