@@ -42,6 +42,20 @@ router.get("/vote/:clubId", (req, res) => {
   });
 });
 
+router.get("/vote/:clubId/submitted", (req, res) => {
+  db.Book.findAll({
+    where: {
+      clubId: req.params.clubId,
+    },
+  }).then((foundBooks) => {
+    console.log(foundBooks);
+    res.render("voteSubmitted", {books: foundBooks});
+    // res.json(foundBooks);
+  }).catch((err) => {
+    console.log(err);
+  });
+});
+
 
 router.get("/admin", (req, res) => {
   db.Club.findAll()
@@ -132,11 +146,19 @@ router.post("/api/books", (req, res) => {
 
 //ROUTE TO UPDATE BOOKS
 router.put("/api/books/:id", (req, res) => {
-  db.Book.update(req.body, {
+  db.Book.increment({
+    votes: +1
+  },
+  {
     where: {
       id: req.params.id,
-    },
+    },    
   })
+  // db.Book.update(req.body, {
+  //   where: {
+  //     id: req.params.id,
+  //   },    
+  // })
     .then((updatedBook) => {
 		console.log(updatedBook);
 	  res.json(updatedBook);
