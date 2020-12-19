@@ -4,6 +4,7 @@
 ## Table of Contents
 [Creators](#creators)<br/>
 [Packages Used](#packages-used)<br/>
+[User Story](#user-story)<br/>
 [Description](#desciption)<br/>
 [CRUD Features](#crud-features)<br/>
 [Demo](#demo)<br/>
@@ -25,6 +26,14 @@
  * mysql2<br/>
  * sequelize<br/>
  * sequelize-cli<br/>
+ * ESLint<br/>
+ 
+ ## User Story
+ 
+AS A book club member
+I WANT the book club to read the book that is most voted on our list
+SO THAT we can read a book that most members want to read, making the selection process quick & painless. 
+
  
  ## Description
   Looking for your next book to read for your book club, but can’t decide on one. 
