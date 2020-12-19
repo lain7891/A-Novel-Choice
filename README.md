@@ -18,6 +18,8 @@
  
  ## Packages Used
 
+ ![readme-gif](public/assets/images/ANovelChoice.gif)
+
  * express<br/>
  * express-handlebars<br/>
  * handlebars<br/>
@@ -25,6 +27,10 @@
  * mysql2<br/>
  * sequelize<br/>
  * sequelize-cli<br/>
+
+ <img src="public/assets/images/homePage.png" width="600" height="400"/>
+  <img src="public/assets/images/votePage.png" width="600" height="400"/>
+   <img src="public/assets/images/adminPage.png" width="600" height="400"/>
  
  ## Description
   Looking for your next book to read for your book club, but can’t decide on one. 
