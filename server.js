@@ -29,17 +29,17 @@ app.set("view engine", "handlebars");
 
 // ROUTES
 
-//Views Routes *handle-bars*
-app.get("/", (req, res) => {
-	db.Club.findAll()
-	.then((data) => {
-		console.log(data);
-		res.render("index", { clubs: data });
-	})
-	.catch((err) => {
-		console.log(err);
-	});
-});
+// //Views Routes *handle-bars*
+// app.get("/", (req, res) => {
+// 	db.Club.findAll()
+// 	.then((data) => {
+// 		console.log(data);
+// 		res.render("index", { clubs: data });
+// 	})
+// 	.catch((err) => {
+// 		console.log(err);
+// 	});
+// });
 
 app.use(bookController);
 
