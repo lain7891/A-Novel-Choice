@@ -4,6 +4,7 @@
 ## Table of Contents
 [Creators](#creators)<br/>
 [Packages Used](#packages-used)<br/>
+[User Story](#user-story)<br/>
 [Description](#desciption)<br/>
 [CRUD Features](#crud-features)<br/>
 [Demo](#demo)<br/>
@@ -27,6 +28,7 @@
  * mysql2<br/>
  * sequelize<br/>
  * sequelize-cli<br/>
+ * eslint<br/>
 
  <img src="public/assets/images/homePage.png" width="600" height="400"/>
   <img src="public/assets/images/votePage.png" width="600" height="400"/>

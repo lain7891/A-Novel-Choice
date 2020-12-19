@@ -6,14 +6,13 @@ $(document).ready(function () {
     const club = $("#clubSelect").val();
     console.log(club);
   
-    //TODO: add AJAX call and redirect to /vote path.
     $.ajax({
       method:"GET",
       url:`/vote/${club}`,
     }).then((response) => {
       console.log(response);
       window.location.href=`/vote/${club}`;
-      // window.location.replace("/vote");
+
     });
   });
 });

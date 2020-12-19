@@ -18,27 +18,15 @@ router.get("/", (req, res) => {
 // VIEW ROUTES
 // ============
 
-// index page (on server.js)
-// votes page
-// admin page
+
 
 router.get("/vote", (req,res) => {
   res.render("vote")
-  //   db.Book.findAll({
-  //   include: db.Club,
-  // })
-  //   .then((allBooks) => {
-  //     console.log(allBooks);
-  //     res.render("vote", { books: allBooks });
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
+  
 })
 
 
 //INDEX ROUTE FOR GET ALL BOOKS
-//TODO: Fix this route to properly render the vote page
 router.get("/vote/:clubId", (req, res) => {
   db.Book.findAll({
     where: {
@@ -61,7 +49,6 @@ router.get("/vote/:clubId/submitted", (req, res) => {
   }).then((foundBooks) => {
     console.log(foundBooks);
     res.render("voteSubmitted", {books: foundBooks});
-    // res.json(foundBooks);
   }).catch((err) => {
     console.log(err);
   });
@@ -90,7 +77,6 @@ router.get("/admin/:clubId", (req, res) => {
       }).then((foundBooks) => {
         console.log(foundBooks);
         res.render("adminSearch", { clubs: allClubs, books: foundBooks });
-        // res.json(foundBooks);
       }).catch((err) => {
         console.log(err);
       });
@@ -105,13 +91,6 @@ router.get("/admin/:clubId", (req, res) => {
 // API ROUTES
 // ============
 
-// GET all clubs
-// POST club
-
-// GET books by club
-// POST books by club
-// PUT books by club
-// DELETE books by club
 
 router.get("/api/clubs", (req, res) => {
   db.Club.findAll().then((foundClub) => {
