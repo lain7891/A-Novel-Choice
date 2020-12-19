@@ -8,7 +8,6 @@ $(document).ready(function () {
       const club = $("#clubId").attr("value");
       console.log(club);
 
-// todo put increment issue
       $.ajax({
         method:"PUT",
         url:`/api/votes/${book}`
