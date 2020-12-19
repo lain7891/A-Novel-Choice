@@ -89,7 +89,7 @@ $(document).ready(function () {
 
     //TODO: Build out edit call for books.
     // $('#modalEditNovel').modal();
-    $("#editNovel").on("click",function (e) {
+    $("#editNovel").on("click",function () {
       const editButton = $("#editNovel");
       const saveButton = $("#saveNovel");
 
@@ -127,7 +127,7 @@ $(document).ready(function () {
 
 
 
-  	$("#deleteNovel").on("click", function (f) {
+    $("#deleteNovel").on("click", function (f) {
     f.preventDefault();
     const book = $("#selectedBook").attr("value");
     console.log(book);
