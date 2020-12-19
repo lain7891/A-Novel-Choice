@@ -3,6 +3,17 @@ const router = express.Router();
 
 const db = require("../models");
 
+router.get("/", (req, res) => {
+  	db.Club.findAll()
+  	.then((data) => {
+  		console.log(data);
+  		res.render("index", { clubs: data });
+  	})
+  	.catch((err) => {
+  		console.log(err);
+  	});
+  });
+
 // ============
 // VIEW ROUTES
 // ============
