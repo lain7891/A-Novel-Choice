@@ -44,12 +44,9 @@
                     <div class="col s10">
 
                         <!-- Loop block to show books by title and author. -->
-                        <!-- TODO: Get the rendering to work. -->
                         {{#each books}}
                             <div class="row">
                                 <div class="col s10">
-                                    {{!-- <h5 id="selectedBook" value={{id}}>{{title}}</h5>
-                                    <p>By: {{author}}</p> --}}
                                     <textarea disabled id="selectedBook" class="materialize-textarea" value={{id}}>{{title}}</textarea>
                                     <textarea disabled id="selectedAuthor" class="materialize-textarea" value={{id}}>{{author}}</textarea>
                                 </div>
@@ -73,7 +70,6 @@
             </div>
         </div>
 
-        <!-- TODO: Convert this button to display when the response for the club query loads. -->
         <div class="row">
             <div class="col s2"></div>
             <div class="col s8" id="hidden">
@@ -134,7 +130,6 @@
 </div>
 
 <!-- Edit Novel -->
-<!-- TODO: Modify this to bring in the values of the record being edited. -->
 <div class="modal" id="modalEditNovel">
     <div class="modal-content">
         <h4>Modify A Novel</h4>

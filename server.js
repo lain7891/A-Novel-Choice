@@ -29,18 +29,6 @@ app.set("view engine", "handlebars");
 
 // ROUTES
 
-// //Views Routes *handle-bars*
-// app.get("/", (req, res) => {
-// 	db.Club.findAll()
-// 	.then((data) => {
-// 		console.log(data);
-// 		res.render("index", { clubs: data });
-// 	})
-// 	.catch((err) => {
-// 		console.log(err);
-// 	});
-// });
-
 app.use(bookController);
 
 //API Routes
@@ -49,16 +37,6 @@ app.get("/api/config", (req, res) => {
 		success: true,
 	});
 });
-
-// app.get('/', (req, res)=>{
-//     res.render('index',{title: 'Home Page'});
-// });
-// app.get('/vote', (req, res)=>{
-//     res.render('vote',{title: 'Vote Page'});
-// });
-// app.get('/admin', (req, res)=>{
-//     res.render('admin',{title: 'Admin Page'});
-// });
 
 app.post("/api/test", (req, res) => {
 	console.log(req.body);
