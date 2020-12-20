@@ -19,6 +19,8 @@
  
  ## Packages Used
 
+ ![readme-gif](public/assets/images/ANovelChoice.gif)
+
  * express<br/>
  * express-handlebars<br/>
  * handlebars<br/>
@@ -26,14 +28,11 @@
  * mysql2<br/>
  * sequelize<br/>
  * sequelize-cli<br/>
- * ESLint<br/>
- 
- ## User Story
- 
-AS A book club member
-I WANT the book club to read the book that is most voted on our list
-SO THAT we can read a book that most members want to read, making the selection process quick & painless. 
+ * eslint<br/>
 
+ <img src="public/assets/images/homePage.png" width="600" height="400"/>
+  <img src="public/assets/images/votePage.png" width="600" height="400"/>
+   <img src="public/assets/images/adminPage.png" width="600" height="400"/>
  
  ## Description
   Looking for your next book to read for your book club, but can’t decide on one. 
